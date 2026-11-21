@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f8f5">
+  <meta name="description" content="{{ page_description }}">
+  <meta name="robots" content="index,follow">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SIMT">
+  <meta property="og:title" content="{{ page_title }} | SIMT — Direction That Drives Growth">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta name="twitter:card" content="summary">
+  <title>{{ page_title }} | SIMT — Direction That Drives Growth</title>
+  <link rel="icon" type="image/png" href="/static/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="SIMT home">
+      <img src="/static/assets/simt-mark-transparent.png" alt="" width="40" height="40">
+      <span class="brand-english">SIMT</span>
+      <span class="brand-urdu" lang="ur" dir="rtl">سمت</span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="/about" class="{{ 'active' if active=='about' else '' }}" {% if active=='about' %}aria-current="page"{% endif %}>About</a>
+      <a href="/services" class="{{ 'active' if active=='services' else '' }}" {% if active=='services' %}aria-current="page"{% endif %}>Services</a>
+      <a href="/who-we-help" class="{{ 'active' if active=='who' else '' }}" {% if active=='who' %}aria-current="page"{% endif %}>Who we help</a>
+      <a href="/approach" class="{{ 'active' if active=='approach' else '' }}" {% if active=='approach' %}aria-current="page"{% endif %}>Our approach</a>
+      <a href="/concept-projects" class="{{ 'active' if active=='projects' else '' }}" {% if active=='projects' %}aria-current="page"{% endif %}>Projects</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-contact" href="/contact">Let's talk <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div id="site-menu" class="menu-panel" hidden>
+  <div class="container menu-panel-inner">
+    <span class="eyebrow">THE SIMT SITE / EXPLORE</span>
+    <nav class="menu-links" aria-label="Expanded navigation">
+      <a href="/">Home <span>01</span></a>
+      <a href="/about" {% if active=='about' %}aria-current="page"{% endif %}>About SIMT <span>02</span></a>
+      <a href="/services" {% if active=='services' %}aria-current="page"{% endif %}>Services <span>03</span></a>
+      <a href="/who-we-help" {% if active=='who' %}aria-current="page"{% endif %}>Who we help <span>04</span></a>
+      <a href="/approach" {% if active=='approach' %}aria-current="page"{% endif %}>Our approach <span>05</span></a>
+      <a href="/concept-projects" {% if active=='projects' %}aria-current="page"{% endif %}>Concept projects <span>06</span></a>
+      <a href="/contact">Contact & consultation <span>07</span></a>
+    </nav>
+    <p>Clarity, before commitment. <span lang="ur" dir="rtl">سمت</span></p>
+  </div>
+</div>
+<main id="main">{% block content %}{% endblock %}</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-branding">
+        <a href="/" class="brand" aria-label="SIMT home">
+          <img src="/static/assets/simt-mark-transparent.png" alt="" width="42" height="42">
+          <span class="brand-english">SIMT</span><span class="brand-urdu" lang="ur" dir="rtl">سمت</span>
+        </a>
+        <p>Direction that drives growth.<br>Strategy for businesses ready to move.</p>
+        <span class="footer-motto">FROM AN IDEA TO A DIRECTION.</span>
+      </div>
+      <div class="footer-links">
+        <span class="eyebrow">EXPLORE</span>
+        <a href="/services">Services</a>
+        <a href="/who-we-help">Who we help</a>
+        <a href="/approach">Our approach</a>
+        <a href="/concept-projects">Concept projects</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="footer-links">
+        <span class="eyebrow">CONNECT</span>
+        <a href="mailto:{{ site_email }}">{{ site_email }}</a>
+        <a href="{{ linkedin }}" rel="noopener noreferrer" target="_blank">SIMT on LinkedIn ↗</a>
+        {% if whatsapp %}<a href="{{ whatsapp }}" rel="noopener noreferrer" target="_blank">WhatsApp us ↗</a>{% else %}<span class="muted" title="Available when SIMT provides its business WhatsApp number">WhatsApp — coming soon</span>{% endif %}
+        {% if calendly %}<a href="{{ calendly }}" rel="noopener noreferrer" target="_blank">Book with Calendly ↗</a>{% endif %}
+        <a href="/privacy">Privacy notice</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© {{ year }} SIMT / <span lang="ur">سمت</span></span><span>Built for better direction.</span><a href="#main">BACK TO TOP ↑</a></div>
+  </div>
+</footer>
+<!-- SIMORA floating assistant -->
+<div class="simora-root" data-simora>
+  <section class="simora-panel" id="simora-panel" role="dialog" aria-labelledby="simora-title" aria-hidden="true" hidden>
+    <header class="simora-header">
+      <div class="simora-avatar" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img" aria-label="">
+          <path d="M32 4v7m-5-7h10" class="bot-antenna"/>
+          <rect x="9" y="13" width="46" height="39" rx="13" class="bot-shell"/>
+          <rect x="14" y="18" width="36" height="29" rx="9" class="bot-screen"/>
+          <circle cx="25" cy="30" r="3.4" class="bot-eye"/><circle cx="39" cy="30" r="3.4" class="bot-eye"/>
+          <path d="M25 38q7 6 14 0" class="bot-smile"/>
+          <path d="M9 29H5m54 0h-4M23 53v5m18-5v5" class="bot-detail"/>
+        </svg>
+      </div>
+      <div class="simora-heading"><strong id="simora-title">SIMORA</strong><span>Guided assistant by SIMT</span></div>
+      <span class="simora-online"><i></i> Here to help</span>
+      <button class="simora-close" type="button" aria-label="Close SIMORA chat">×</button>
+    </header>
+    <div class="simora-messages" id="simora-messages" aria-live="polite">
+      <div class="simora-message bot-message">Hello! I'm SIMORA. I can help you explore SIMT's services, approach and consultation options. What would you like to know?</div>
+    </div>
+    <div class="simora-quick" id="simora-quick">
+      <button type="button" data-prompt="What services does SIMT offer?">Explore services</button>
+      <button type="button" data-prompt="How can I book a consultation?">Book a consultation</button>
+      <button type="button" data-prompt="Who is on the SIMT team?">Meet the team</button>
+    </div>
+    <form class="simora-form" id="simora-form">
+      <label class="sr-only" for="simora-input">Message SIMORA</label>
+      <input id="simora-input" name="message" maxlength="1000" autocomplete="off" placeholder="Ask SIMORA a question…" required>
+      <button type="submit" aria-label="Send message"><span>↑</span></button>
+    </form>
+    <div class="simora-footnote">SIMORA by SIMT · Guided assistant</div>
+  </section>
+  <button class="simora-launcher" type="button" aria-label="Chat with SIMORA" aria-controls="simora-panel" aria-expanded="false">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M32 4v7m-5-7h10" class="bot-antenna"/>
+      <rect x="9" y="13" width="46" height="39" rx="13" class="bot-shell"/>
+      <rect x="14" y="18" width="36" height="29" rx="9" class="bot-screen"/>
+      <circle cx="25" cy="30" r="3.4" class="bot-eye"/><circle cx="39" cy="30" r="3.4" class="bot-eye"/>
+      <path d="M25 38q7 6 14 0" class="bot-smile"/>
+      <path d="M9 29H5m54 0h-4M23 53v5m18-5v5" class="bot-detail"/>
+    </svg>
+    <span class="sr-only">Ask SIMORA</span>
+  </button>
+</div>
+<script src="/static/js/simora.js" defer></script>
+<script src="/static/js/site.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
